@@ -86,7 +86,7 @@ export default {
     },
     methods:{
         onSubmit(evt){
-            const path = `http://127.0.0.1:8000/api/v1/r registro/${this.estudianteId}`
+            const path = `http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/${this.estudianteId}`
             axios.put(path, this.form, {headers: { Authorization: localStorage.token}}).then((response) => {
                 this.form.name = response.data.name
                 this.form.lastname = response.data.lastname
@@ -103,7 +103,7 @@ export default {
             evt.preventDefault()
         },
         getAlumno(){
-            const path = `http://127.0.0.1:8000/api/v1/r registro/${this.estudianteId}`
+            const path = `http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/${this.estudianteId}`
             axios.get(path, {headers: { Authorization: localStorage.token}}).then((response) => {
                 this.form.name = response.data.name
                 this.form.lastname = response.data.lastname

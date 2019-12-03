@@ -49,15 +49,15 @@ export default {
       
       swal("Click on either the button or outside the modal.")
   .then((value) => {
-    const path="http://127.0.0.1:8000/api/v1/r registro/"+x+"/"
+    const path="http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/"+x+""
     console.log("Esto es path "+path)
-    axios.delete(path).then((response) => {
+    axios.delete(path, {headers: { Authorization: localStorage.token}}).then((response) => {
       location.href='/ListAlumno'
     })
   });
     },
     getAlumnos() {
-      const path = "http://127.0.0.1:8000/api/v1/r registro/";
+      const path = "http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/";
       axios
         .get(path, {headers: { Authorization: localStorage.token}})
         .then(response => {
