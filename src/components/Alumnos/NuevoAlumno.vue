@@ -44,7 +44,16 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="carrera" class="col-sm-2 col-form-label">Carrera</label>
+                            <select v-model.trim="form.carrera" class="col-sm-2 col-form-label">
+                                <option disabled value = "Carrera"></option>
+                                <option> IDS</option>
+                                <option> Meca</option>
+                                <option> Bio</option>
+                                <option> Ambiental</option>
+                                <option> Agro</option>
+                                <option> petrolera</option>
+                                <option> Manofacturas</option>
+                            </select>
                             <div class="col-sm-6">
                                 <input type="text" placeholder="Carrera" name="carrera" class="form-control" v-model.trim="form.carrera">
                             </div>
