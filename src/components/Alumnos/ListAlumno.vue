@@ -6,6 +6,7 @@
         <b-button class="primary" :to="{name:'NuevoAlumno'}">
           Crear un nuevo estudiante
         </b-button>
+        <input placeholder="Buscar" v-model.trim="criteria"></input>
         </div>
         <br>
 
@@ -15,6 +16,7 @@
           :fields="fields" 
           :sort-by.sync="sortBy" 
           :sort-desc.sync="sortDesc"
+          :filter="criteria"
           responsive="sm"
           >
             <template v-slot:cell(action)="data" >
@@ -33,6 +35,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      criteria: "",
       sortBy: 'nombre',
       sortDesc: false,
       fields: [
@@ -45,6 +48,7 @@ export default {
     }
   },
   methods: {
+
     Deletetetete(x){
       
       swal("Click on either the button or outside the modal.")
