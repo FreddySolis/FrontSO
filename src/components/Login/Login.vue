@@ -63,7 +63,7 @@
               localStorage.token = "Token " + response.data.token
               location.href='/ListAlumno'
             }).catch((error) => {
-                console.log(error)
+                swal ( "Not good" ,  "Correo o contraseña icorrectos" ,  "error" )
             })
             evt.preventDefault()
         }

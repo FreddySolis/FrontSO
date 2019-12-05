@@ -44,8 +44,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <select v-model.trim="form.carrera" class="col-sm-2 col-form-label">
-                                <option disabled value = "Carrera"></option>
+                            <label for="carrera" class="col-sm-2 col-form-label">Carrera</label>
+                            <div class="col-sm-6">
+                                <select v-model.trim="form.carrera" class="form-control">
+                                <option disabled value="">Seleccione una opcion</option>
                                 <option> IDS</option>
                                 <option> Meca</option>
                                 <option> Bio</option>
@@ -54,8 +56,6 @@
                                 <option> petrolera</option>
                                 <option> Manofacturas</option>
                             </select>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Carrera" name="carrera" class="form-control" v-model.trim="form.carrera">
                             </div>
                         </div>
 
@@ -113,7 +113,7 @@ export default {
                 })
 
             }).catch((error) => {
-                console.log(error)
+                swal ( "Not good" ,  "Something went bad!" ,  "error" )
             })
             evt.preventDefault()
         }

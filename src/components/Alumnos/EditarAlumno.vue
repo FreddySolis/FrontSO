@@ -46,7 +46,16 @@
                         <div class="form-group row">
                             <label for="carrera" class="col-sm-2 col-form-label">Carrera</label>
                             <div class="col-sm-6">
-                                <input type="text" placeholder="Carrera" name="carrera" class="form-control" v-model.trim="form.carrera">
+                                <select v-model.trim="form.carrera" class="form-control">
+                                <option disabled value="">Seleccione una opcion</option>
+                                <option> IDS</option>
+                                <option> Meca</option>
+                                <option> Bio</option>
+                                <option> Ambiental</option>
+                                <option> Agro</option>
+                                <option> petrolera</option>
+                                <option> Manofacturas</option>
+                            </select>
                             </div>
                         </div>
 
@@ -98,7 +107,7 @@ export default {
                     location.href='/ListAlumno'
                 })
             }).catch((error) => {
-                console.log(error)
+                swal ( "Not good" ,  "Something went bad!" ,  "error" )
             })
             evt.preventDefault()
         },
@@ -111,8 +120,9 @@ export default {
                 this.form.gender = response.data.gender
                 this.form.carrera = response.data.carrera
                 this.form.address = response.data.address
+                
             }).catch((error) => {
-                console.log(error)
+                swal ( "Not good" ,  "Something went bad!" ,  "error" )
             })
         }
     }, 
