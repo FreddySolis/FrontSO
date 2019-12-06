@@ -54,7 +54,7 @@
     },
     methods: {
        onSubmit(evt){
-            const path = `http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/login`
+            const path = `http://backsoquierodormir.ddns.net/api/v1/login`
             axios.post(path, this.form).then((response) => {
               this.form.username = response.data.username
               this.form.password = response.data.password

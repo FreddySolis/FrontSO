@@ -100,7 +100,7 @@ export default {
                     Authorization: 'Token af29dcaf7c4de200825282777018036b1adabcc0'
                 }
             }
-            const path = `http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/`
+            const path = `http://backsoquierodormir.ddns.net/api/v1/registro/`
             axios.post(path, this.form, {headers: { Authorization: localStorage.token}}).then((response) => {
                 this.form.name = response.data.name
                 this.form.lastname = response.data.lastname

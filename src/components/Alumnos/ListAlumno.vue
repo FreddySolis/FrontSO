@@ -53,7 +53,7 @@ export default {
       
       swal("Click on either the button or outside the modal.")
   .then((value) => {
-    const path="http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/"+x+""
+    const path="http://backsoquierodormir.ddns.net/api/v1/registro/"+x+""
     console.log("Esto es path "+path)
     axios.delete(path, {headers: { Authorization: localStorage.token}}).then((response) => {
       location.href='/ListAlumno'
@@ -61,7 +61,7 @@ export default {
   });
     },
     getAlumnos() {
-      const path = "http://ec2-54-197-214-216.compute-1.amazonaws.com/api/v1/r registro/";
+      const path = "http://backsoquierodormir.ddns.net/api/v1/registro/";
       axios
         .get(path, {headers: { Authorization: localStorage.token}})
         .then(response => {
